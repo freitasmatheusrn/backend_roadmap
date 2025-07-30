@@ -19,3 +19,21 @@ Run the following command in your terminal:
 
 ```bash
 go run main.go caching-proxy --port {port} --origin {originURL}
+```
+
+## 💻 Interactive Commands (After Startup)
+
+  | Command          | Description                             |
+| ---------------- | --------------------------------------- |
+| `clear-cache`    | Clears all cached responses.            |
+| `status`         | Shows whether the server is running.    |
+| `quit` or `exit` | Exits the program. |
+
+
+
+
+
+
+
+
+ 
