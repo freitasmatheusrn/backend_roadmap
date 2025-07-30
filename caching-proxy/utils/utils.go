@@ -10,7 +10,7 @@ import (
 
 func NormalizeRequest(r *http.Request) string {
 	path := strings.ToLower(r.URL.Path)
-	query := r.URL.RawQuery // você pode ordenar os parâmetros aqui se quiser
+	query := r.URL.RawQuery 
 	return fmt.Sprintf("%s?%s", path, query)
 }
 
