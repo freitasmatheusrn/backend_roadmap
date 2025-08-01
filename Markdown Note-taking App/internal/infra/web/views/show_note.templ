@@ -1,0 +1,35 @@
+package views
+
+import "github.com/freitasmatheusrn/markdown-note-taking-app/internal/dtos"
+
+templ ShowNote(note *dtos.NoteOutputDTO) {
+	@Base() {
+		<div class="max-w-2xl mx-auto space-y-6">
+			<div class="note-content bg-white rounded-lg shadow-sm p-6">
+				<h1 class="text-xl font-semibold text-gray-800 mb-4">{note.Name} Content:</h1>
+				<div class="content text-gray-700 leading-relaxed">
+					@templ.Raw(string(note.Content))
+				</div>
+			</div>
+			
+			if len(note.Matches) > 0 {
+				<div class="spelling-errors bg-white rounded-lg shadow-sm p-6">
+					<h3 class="text-lg font-semibold text-red-600 mb-4">Spelling Errors Found</h3>
+					<ul class="error-list space-y-3">
+						for _, match := range note.Matches {
+							<li class="error-item bg-red-50 border-l-4 border-red-400 p-4 rounded">
+								<span class="error-message font-medium text-red-800">{match.Message}</span>
+								<span class="separator text-gray-400"> | </span>
+								<span class="error-sentence text-gray-600 italic">{match.Sentence}</span>
+							</li>
+						}
+					</ul>
+				</div>
+			} else {
+				<div class="no-errors bg-green-50 border border-green-200 rounded-lg p-4">
+					<p class="text-green-800 font-medium">✓ Nenhum erro ortográfico encontrado</p>
+				</div>
+			}
+		</div>
+	}
+}
