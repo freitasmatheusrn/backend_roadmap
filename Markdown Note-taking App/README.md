@@ -1,4 +1,8 @@
 # 📝 Markdown Note App
+ This project is a hands-on implementation of a Markdown Note-Taking App, as suggested in the roadmap. 
+ [Backend Developer Roadmap Project](https://roadmap.sh/projects/markdown-note-taking-app).  
+
+
 
 A lightweight web application to create, save, and preview Markdown notes as rendered HTML. Notes are stored in a PostgreSQL database and checked for spelling mistakes.
 
